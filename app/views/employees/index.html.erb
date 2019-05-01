@@ -1,0 +1,11 @@
+<h1>Office Employees Hall of Fame </h1>
+
+
+<ul>
+  <% @employees.each do |employee|%>
+  <li><%=link_to employee.first_name, employee_path(employee)%> <%= link_to "delete", delete_path(employee)%></li>
+  <% end %>
+</ul>
+
+
+<h3>Recruit Force: <%= link_to "add", new_employee_path %></h3>

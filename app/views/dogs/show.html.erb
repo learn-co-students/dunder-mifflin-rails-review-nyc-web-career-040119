@@ -1,0 +1,17 @@
+
+<h1>This is  <%=@dog.name%> 's page </h1>
+
+<p>
+  <%=@dog.name%>
+</p>
+
+<p>
+  <%= link_to @dog.employees.first[:first_name], employee_path%>
+</p>
+
+<p>
+<%= @dog.age %>
+</p>
+
+<p><%= @dog.breed%>
+</p>

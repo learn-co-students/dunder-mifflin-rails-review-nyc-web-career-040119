@@ -1,0 +1,10 @@
+
+
+<h1>Tis is <%=@employee.first_name%>'s profile</h1>
+
+
+<p><%= @employee.to_info %></p>
+<p><%= image_tag @employee.img_url %></p>
+
+<h4>Edit this employee: <%= link_to "Edit", edit_employee_path%> </h4>
+<h4>Fire this employee: <%= link_to "Goodbye", @employee, method: :delete%></h4>
