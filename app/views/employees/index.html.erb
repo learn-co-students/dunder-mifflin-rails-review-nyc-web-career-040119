@@ -1,0 +1,16 @@
+
+<header>
+  <h1>Employees Owned by Dogs of Dunder Mifflin!</h1>
+<% if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
+</header>
+
+<table>
+  <% @employees.each do |employee| %>
+    <tr>
+      <td title="<%= employee.full_name %>"style="text-align:center"><a href="/employees/<%= employee.id %>"><img src="<%= employee.img_url %>" alt="<%= employee.full_name %>" width="50%"></a></td>
+
+    </tr>
+  <% end %>
+</table>
