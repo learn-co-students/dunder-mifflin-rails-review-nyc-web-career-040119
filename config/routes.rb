@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :dogs
-  resources :employees
+  resources :employees, except: [:destroy]
+  delete '/employees/:id', to:"employees#destroy", as: "delete"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
