@@ -1,0 +1,12 @@
+<h1>Sorted Dogs</h1>
+
+<% @dogs_counted.each do |dog_arr| %>
+  <p><% dog = dog_arr[0] %>
+  <% count = dog_arr[1] %>
+  <%= link_to dog.name, dog %>, Humans: <%= count %>
+  </p>
+<% end %>
+
+<br>
+
+<p><%= link_to "Dogs Index", dogs_path %></p>

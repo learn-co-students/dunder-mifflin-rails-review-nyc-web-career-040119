@@ -1,0 +1,15 @@
+<h1><%= @employee.full_name %></h1>
+
+<p style="color:red;"><%= flash[:message] if flash[:message] %></p>
+
+<p><img style="float:left; max-width:30%; margin: 0 10px 15px 0;" src="<%= @employee.img_url %>" alt="<%= @employee.full_name %>"></p>
+
+<p><b>Dog:</b> <%= link_to @employee.dog.name, @employee.dog %></p>
+<p><b>Alias:</b> <%= @employee.alias %></p>
+<p><b>Title:</b> <%= @employee.title %></p>
+<p><b>Office:</b> <%= @employee.office %></p>
+
+<br>
+<p style="clear:left;"><%= link_to "Employees Index", employees_path %></p>
+<p><%= link_to "Edit this Employee", edit_employee_path(@employee) %></p>
+<p><%= link_to "Delete this Employee", @mployee, method: :delete %></p>
