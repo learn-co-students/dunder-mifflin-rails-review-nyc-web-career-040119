@@ -1,0 +1,58 @@
+<% if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
+
+<%= form_for @employee do |f| %>
+<table>
+  <tr>
+    <td>
+    <%= f.label "#{:first_name}: " %>
+    </td>
+    <td>
+    <%= f.text_field :first_name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <%= f.label "#{:last_name}: " %>
+    </td>
+    <td>
+    <%= f.text_field :last_name %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <%= f.label "#{:alias}: " %>
+    </td>
+    <td>
+    <%= f.text_field :alias %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <%= f.label "#{:title}: " %>
+    </td>
+    <td>
+    <%= f.text_field :title %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <%= f.label "Dog: " %>
+    </td>
+    <td>
+    <%= f.collection_select(:dog_id, @dogs, :id, :name) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.label "Image Url: " %>
+    </td>
+    <td>
+      <%= f.url_field :img_url %>
+    </td>
+  </tr>
+</table>
+<br>
+  <%= f.submit %>
+<% end %>

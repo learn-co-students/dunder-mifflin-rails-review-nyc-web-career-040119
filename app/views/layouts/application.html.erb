@@ -8,6 +8,34 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <nav>
+  <ul>
+
+    <li class="dropdown">
+      <a href="/dogs" class="dropbtn">Dogs</a>
+      <div class="dropdown-content">
+        <% @dogs.each do |dog| %>
+          <a href="/dogs/<%= dog.id%>"><%= dog.name %></a>
+        <% end %>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="/employees" class="dropbtn">Employees</a>
+      <div class="dropdown-content">
+        <% @employees.each do |employee| %>
+          <a href="/employees/<%= employee.id%>"><%= employee.full_name %></a>
+        <% end %>
+      </div>
+    </li>
+
+    <li style="float:right">
+      <a href="/employees/new">Hire an Employee!</a>
+    </li>
+
+  </ul>
+  </nav>
+
   <body>
     <%= yield %>
   </body>

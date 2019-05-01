@@ -1,0 +1,44 @@
+<style>
+
+  /* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+</style>
+
+<h1 style="text-align:center">Welcome, <%= @dog.name %>!</h1>
+
+<table class="column side">
+  <tr>
+    <td><b>Name: </b></td>
+    <td><%= @dog.name %></td>
+  </tr>
+  <tr>
+    <td><b>Age: </b></td>
+    <td><%= @dog.age %></td>
+  </tr>
+  <tr>
+    <td><b>Breed: </b></td>
+    <td><%= @dog.breed %></td>
+  </tr>
+</table>
+
+<table class="column">
+  <tr>
+  <th>Employees Who Worship You</th>
+  </tr>
+  <% @dog.employees.each do |employee| %>
+  <tr>
+    <td style="text-align:center">
+    <%= link_to employee.full_name, employee %>
+    </td>
+  </tr>
+  <% end %>
+</table>

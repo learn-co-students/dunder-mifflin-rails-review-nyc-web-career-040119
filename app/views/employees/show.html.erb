@@ -1,0 +1,22 @@
+<nav>
+  <ul style="float:right">
+    <li><a href="/employees/<%= @employee.id %>/edit">Edit</a></li>
+    <li><%= link_to "Delete", @employee, method: "delete" %></li>
+  </ul>
+</nav>
+
+<header>
+  <h3 style="text-align:center;">Welcome, <%= @employee.full_name %>!</h3>
+  <hr>
+  <h3 style="text-align:center;">Remember, <%= link_to @dog.name, @dog %> is superior than you in every way!</h3>
+</header>
+
+<body style="text-align:center;">
+  <img src="<%= @employee.img_url %>" alt="<%= @employee.full_name %>" width="50%" height="50%">
+  <p><b>Name: </b><%= @employee.full_name %></p>
+  <p><b>Job Title: </b><%= @employee.title %></p>
+  <p><b>Alias: </b><%= @employee.alias %></p>
+  <p><b>Office: </b><%= @employee.office %></p>
+  <p><b>Dog: </b><%= @dog.name %></p>
+
+</body>

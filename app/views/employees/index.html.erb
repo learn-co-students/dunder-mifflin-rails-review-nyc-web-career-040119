@@ -1,0 +1,15 @@
+<header>
+  <h1>Employees Owned by Dogs of Dunder Mifflin!</h1>
+</header>
+
+<table>
+  <tr>
+    <th>Employees</th>
+  </tr>
+  <% @employees.each do |employee| %>
+    <tr>
+      <td style="text-align:center"><a href="/employees/<%= employee.id %>"><img src="<%= employee.img_url %>" alt="<%= employee.full_name %>" width="50%" height="50%"></a>
+      <br><%= link_to employee.full_name, employee %></td>
+    </tr>
+  <% end %>
+</table>
